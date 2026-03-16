@@ -1,0 +1,58 @@
+<!NOTATION jpg PUBLIC "image/jpg">
+
+<!ENTITY rila_img SYSTEM "images/rila.jpg" NDATA jpg>
+<!ENTITY pirin_img SYSTEM "images/pirin.jpg" NDATA jpg>
+<!ENTITY stara_planina_img SYSTEM "images/stara_planina.jpg" NDATA jpg>
+<!ENTITY rodopi_img SYSTEM "images/rodopi.jpg" NDATA jpg>
+<!ENTITY vitosha_img SYSTEM "images/vitosha.jpg" NDATA jpg>
+<!ENTITY osogovo_img SYSTEM "images/osogovo.jpg" NDATA jpg>
+<!ENTITY sredna_gora_img SYSTEM "images/sredna_gora.jpg" NDATA jpg>
+<!ENTITY strandja_img SYSTEM "images/strandja.jpg" NDATA jpg>
+
+<!ELEMENT catalog (regions, mountain_types, height_categories, mountains)>
+<!ATTLIST catalog
+  xmlns:xsi CDATA #IMPLIED
+  xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+
+<!ELEMENT regions (region+)>
+<!ELEMENT region (description)>
+<!ATTLIST region id ID #REQUIRED name CDATA #REQUIRED>
+
+<!ELEMENT mountain_types (type+)>
+<!ELEMENT type (description)>
+<!ATTLIST type id ID #REQUIRED name CDATA #REQUIRED>
+
+<!ELEMENT height_categories (category+)>
+<!ELEMENT category (description)>
+<!ATTLIST category
+  id ID #REQUIRED
+  name CDATA #REQUIRED
+  min_height CDATA #IMPLIED
+  max_height CDATA #IMPLIED>
+
+<!ELEMENT mountains (mountain+)>
+<!ELEMENT mountain (name, peak, max_height, area, location, geological_age, rock_type, description, attractions, image)>
+<!ATTLIST mountain
+  id ID #REQUIRED
+  region_ref IDREF #REQUIRED
+  type_ref IDREF #REQUIRED
+  height_cat_ref IDREF #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT peak (#PCDATA)>
+<!ELEMENT max_height (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+
+<!ELEMENT location (coordinates)>
+<!ELEMENT coordinates (latitude, longitude)>
+<!ELEMENT latitude (#PCDATA)>
+<!ELEMENT longitude (#PCDATA)>
+
+<!ELEMENT geological_age (#PCDATA)>
+<!ELEMENT rock_type (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT attractions (#PCDATA)>
+
+<!ELEMENT image EMPTY>
+<!ATTLIST image
+  src ENTITY #REQUIRED>

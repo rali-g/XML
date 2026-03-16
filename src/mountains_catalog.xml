@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="mountains_transform.xsl"?>
+<!DOCTYPE catalog SYSTEM "mountains.dtd">
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="mountains_schema.xsd">
+  <regions>
+    <region id="r1" name="Югозападна България">
+      <description>Югозападна България обхваща най-високите планини в страната - Рила и Пирин, както и планината Витоша.</description>
+    </region>
+    <region id="r2" name="Северна България">
+      <description>Северна България е дом на Стара планина (Балкан), която е най-дългата планина в страната.</description>
+    </region>
+    <region id="r3" name="Южна България">
+      <description>Южна България включва Родопите и Средна гора - планини с богата история и природа.</description>
+    </region>
+    <region id="r4" name="Западна България">
+      <description>Западна България включва планината Осогово, разположена на границата с Северна Македония.</description>
+    </region>
+    <region id="r5" name="Югоизточна България">
+      <description>Югоизточна България е дом на Странджа - най-старата планина в България.</description>
+    </region>
+  </regions>
+  <mountain_types>
+    <type id="t1" name="Младонагънати планини">
+      <description>Планини, образувани по време на Алпийската орогенеза през Терциера</description>
+    </type>
+    <type id="t2" name="Старонагънати планини">
+      <description>Планини, образувани преди Алпийската орогенеза, през Палеозоя</description>
+    </type>
+  </mountain_types>
+  <height_categories>
+    <category id="h1" name="Високи" min_height="2000">
+      <description>Планини с максимална височина над 2000 метра</description>
+    </category>
+    <category id="h2" name="Средно-високи" min_height="1000" max_height="2000">
+      <description>Планини с максимална височина между 1000 и 2000 метра</description>
+    </category>
+    <category id="h3" name="Ниски" max_height="1000">
+      <description>Планини с максимална височина под 1000 метра</description>
+    </category>
+  </height_categories>
+  <mountains>
+    <mountain id="m1" region_ref="r1" type_ref="t1" height_cat_ref="h1">
+      <name>Рила</name>
+      <peak>Мусала</peak>
+      <max_height>2925</max_height>
+      <area>2629</area>
+      <location>
+        <coordinates>
+          <latitude>42.1833</latitude>
+          <longitude>23.5833</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Алпийска епоха (Терциер)</geological_age>
+      <rock_type>Гранити, гнайси, кристалинни шисти</rock_type>
+      <description>Рила е най-високата планина в България и на Балканския полуостров. Името ѝ произлиза от тракийското "Рилон", което означава "планина с много вода". Планината е известна с ледниковите си езера - има над 120 езера.</description>
+      <attractions>Седемте рилски езера, Рилски манастир, връх Мусала</attractions>
+      <image src="rila_img"/>
+    </mountain>
+
+    <mountain id="m2" region_ref="r1" type_ref="t1" height_cat_ref="h1">
+      <name>Пирин</name>
+      <peak>Вихрен</peak>
+      <max_height>2914</max_height>
+      <area>2585</area>
+      <location>
+        <coordinates>
+          <latitude>41.7667</latitude>
+          <longitude>23.4000</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Алпийска епоха (Терциер)</geological_age>
+      <rock_type>Мрамори, гранити, гнайси</rock_type>
+      <description>Пирин е втората по височина планина в България. Името произлиза от името на тракийския бог Перун. Планината е обявена за национален парк и е включена в списъка на световното наследство на ЮНЕСКО.</description>
+      <attractions>Национален парк Пирин, Банско, Баюви дупки, ледникови езера</attractions>
+      <image src="pirin_img"/>
+    </mountain>
+
+    <mountain id="m3" region_ref="r2" type_ref="t2" height_cat_ref="h2">
+      <name>Стара планина</name>
+      <peak>Ботев</peak>
+      <max_height>2376</max_height>
+      <area>11596</area>
+      <location>
+        <coordinates>
+          <latitude>42.7167</latitude>
+          <longitude>24.9167</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Херцинска орогенеза (Палеозой)</geological_age>
+      <rock_type>Варовици, пясъчници, конгломерати</rock_type>
+      <description>Стара планина или Балкан е най-дългата планина в България - простира се на 555 км от западната до източната граница на страната. Балканът дели България на северна и южна част и е символ на българската държава.</description>
+      <attractions>Връх Ботев, Шипченски проход, Троянски манастир, Беклемето</attractions>
+      <image src="stara_planina_img"/>
+    </mountain>
+
+    <mountain id="m4" region_ref="r3" type_ref="t2" height_cat_ref="h2">
+      <name>Родопи</name>
+      <peak>Голям Перелик</peak>
+      <max_height>2191</max_height>
+      <area>14735</area>
+      <location>
+        <coordinates>
+          <latitude>41.6167</latitude>
+          <longitude>24.7167</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Херцинска орогенеза (Палеозой)</geological_age>
+      <rock_type>Метаморфни скали, мрамори, гнайси</rock_type>
+      <description>Родопите са най-обширната планина в България. Името произлиза от тракийския цар Родоп. Планината е известна с богатата си история, пещери и уникална култура.</description>
+      <attractions>Дяволското гърло, Триградскотождрело, Широка лъка, Чудните мостове</attractions>
+      <image src="rodopi_img"/>
+    </mountain>
+
+    <mountain id="m5" region_ref="r1" type_ref="t1" height_cat_ref="h2">
+      <name>Витоша</name>
+      <peak>Черни връх</peak>
+      <max_height>2290</max_height>
+      <area>278</area>
+      <location>
+        <coordinates>
+          <latitude>42.5667</latitude>
+          <longitude>23.2833</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Алпийска епоха (Терциер)</geological_age>
+      <rock_type>Гранити, сиенити</rock_type>
+      <description>Витоша е планина непосредствено до София и е любимо място за отдих на софиянци. Това е първият парк на Балканите, обявен за национален парк още през 1934 година. Планината е известна с каменната река "Златните мостове".</description>
+      <attractions>Златните мостове, Боянски водопад, Драгалевски манастир, ски писти</attractions>
+      <image src="vitosha_img"/>
+    </mountain>
+
+    <mountain id="m6" region_ref="r4" type_ref="t2" height_cat_ref="h2">
+      <name>Осогово</name>
+      <peak>Руен</peak>
+      <max_height>2251</max_height>
+      <area>680</area>
+      <location>
+        <coordinates>
+          <latitude>42.1833</latitude>
+          <longitude>22.6333</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Херцинска орогенеза (Палеозой)</geological_age>
+      <rock_type>Гранити, гнайси, мрамори</rock_type>
+      <description>Осогово е планински масив на границата между България и Северна Македония. Името на планината произлиза от думата "осѣкъ" - място където са отсечени дървета. Планината е богата на водни ресурси.</description>
+      <attractions>Осоговски манастир, Крива река, природни забележителности</attractions>
+      <image src="osogovo_img"/>
+    </mountain>
+
+    <mountain id="m7" region_ref="r3" type_ref="t2" height_cat_ref="h3">
+      <name>Средна гора</name>
+      <peak>Богдан</peak>
+      <max_height>1604</max_height>
+      <area>5420</area>
+      <location>
+        <coordinates>
+          <latitude>42.4500</latitude>
+          <longitude>24.8000</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Херцинска орогенеза (Палеозой)</geological_age>
+      <rock_type>Андезити, туфи, вулканични скали</rock_type>
+      <description>Средна гора е планински масив между Стара планина и Родопите. Планината е известна с историческото си значение - през Руско-турската война тук се намират важни бойни полета. Богата е на полезни изкопаеми.</description>
+      <attractions>Копривщица, Клисурски манастир, исторически паметници</attractions>
+      <image src="sredna_gora_img"/>
+    </mountain>
+
+    <mountain id="m8" region_ref="r5" type_ref="t2" height_cat_ref="h3">
+      <name>Странджа</name>
+      <peak>Голяма Махиданица</peak>
+      <max_height>710</max_height>
+      <area>1161</area>
+      <location>
+        <coordinates>
+          <latitude>42.0833</latitude>
+          <longitude>27.4833</longitude>
+        </coordinates>
+      </location>
+      <geological_age>Предкамбрий-Палеозой</geological_age>
+      <rock_type>Метаморфни скали, гранити</rock_type>
+      <description>Странджа е най-старата планина в България, формирана преди повече от 500 милиона години. Планината е покрита с реликтни гори и е известна с уникалната си флора и фауна. Тук се запазват древни традиции като нестинарството.</description>
+      <attractions>Природен парк Странджа, нестинарство, древни гори, Beglik Tash</attractions>
+      <image src="strandja_img"/>
+    </mountain>
+
+  </mountains>
+
+</catalog>

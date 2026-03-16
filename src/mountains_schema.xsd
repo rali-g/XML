@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="catalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="regions" type="RegionsType"/>
+        <xs:element name="mountain_types" type="MountainTypesType"/>
+        <xs:element name="height_categories" type="HeightCategoriesType"/>
+        <xs:element name="mountains" type="MountainsType"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name="regionKey">
+      <xs:selector xpath="regions/region"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:key name="typeKey">
+      <xs:selector xpath="mountain_types/type"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:key name="heightCategoryKey">
+      <xs:selector xpath="height_categories/category"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:key name="mountainKey">
+      <xs:selector xpath="mountains/mountain"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:keyref name="regionRef" refer="regionKey">
+      <xs:selector xpath="mountains/mountain"/>
+      <xs:field xpath="@region_ref"/>
+    </xs:keyref>
+    <xs:keyref name="typeRef" refer="typeKey">
+      <xs:selector xpath="mountains/mountain"/>
+      <xs:field xpath="@type_ref"/>
+    </xs:keyref>
+    <xs:keyref name="heightCategoryRef" refer="heightCategoryKey">
+      <xs:selector xpath="mountains/mountain"/>
+      <xs:field xpath="@height_cat_ref"/>
+    </xs:keyref>
+  </xs:element>
+  <xs:complexType name="RegionsType">
+    <xs:sequence>
+      <xs:element name="region" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="description" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:ID" use="required"/>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MountainTypesType">
+    <xs:sequence>
+      <xs:element name="type" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="description" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:ID" use="required"/>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeightCategoriesType">
+    <xs:sequence>
+      <xs:element name="category" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="description" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:ID" use="required"/>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+          <xs:attribute name="min_height" type="xs:positiveInteger" use="optional"/>
+          <xs:attribute name="max_height" type="xs:positiveInteger" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MountainsType">
+    <xs:sequence>
+      <xs:element name="mountain" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="peak" type="xs:string"/>
+            <xs:element name="max_height" type="xs:positiveInteger"/>
+            <xs:element name="area" type="xs:positiveInteger"/>
+            <xs:element name="location" type="LocationType"/>
+            <xs:element name="geological_age" type="xs:string"/>
+            <xs:element name="rock_type" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="attractions" type="xs:string"/>
+            <xs:element name="image">
+              <xs:complexType>
+                <xs:attribute name="src" type="xs:ENTITY" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:ID" use="required"/>
+          <xs:attribute name="region_ref" type="xs:IDREF" use="required"/>
+          <xs:attribute name="type_ref" type="xs:IDREF" use="required"/>
+          <xs:attribute name="height_cat_ref" type="xs:IDREF" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LocationType">
+    <xs:sequence>
+      <xs:element name="coordinates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="latitude" type="xs:decimal"/>
+            <xs:element name="longitude" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
